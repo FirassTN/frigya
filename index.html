@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Terminal Message</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Courier+New:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300');
 
     html, body {
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: #0f0f0f;
-      font-family: 'Courier New', monospace;
-      font-size: 14px;
+      background: black;
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 12px;
       margin: 0;
       padding: 0;
     }
@@ -22,61 +22,64 @@
       box-sizing: border-box;
     }
 
+    .terminal, .terminal:before, .terminal:after, p:after {
+      position: absolute;
+    }
+
     .terminal {
-      position: relative;
       height: 80vh;
       width: 80vw;
-      margin: 10vh auto;
-      padding: 20px;
-      border-radius: 8px;
-      background: linear-gradient(145deg, #333, #222);
-      border: 2px solid #00ff00;
-      box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-      color: #00ff00;
-      overflow: hidden;
+      margin: 10vh 10vw;
+      padding: 26px 4px 4px;
+      border-radius: 5px;
+      background: linear-gradient(
+        #f6f6f6, 
+        #d3d3d3 20px,
+        #7e7e7e 20px,
+        #7e7e7e 21px,
+        #393456 21px
+      );
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .25);
+      transition: all .5s ease;
     }
 
     .terminal:before {
       content: " ";
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      margin: -15px 0 0 10px;
-      border-radius: 6px;
-      background: #ff0000;
+      width: 10px;
+      height: 10px;
+      margin: -20px 0 0 5px;
+      border-radius: 5px;
+      background: #fc625d;
       box-shadow:
-        0 0 0 1px #cc0000,
-        15px 0 #ffcc00,
-        15px 0 0 1px #ff9900,
-        30px 0 #00ff00,
-        30px 0 0 1px #009900;
+        0 0 0 1px #de413e,
+        15px 0 #fec041,
+        15px 0 0 1px #dda035,
+        30px 0 #35cc4b,
+        30px 0 0 1px #28aa36;
     }
 
     .terminal:after {
-      content: "Frigya Terminal";
-      position: absolute;
       width: 100%;
+      content: "Frigya";
       top: 0;
       text-align: center;
-      color: #ffcc00;
+      color: #4c4c4c;
       line-height: 20px;
-      font-weight: bold;
-      text-shadow: 0 0 10px #ffcc00;
     }
 
     p {
-      color: #00ff00;
+      color: #fff;
       white-space: nowrap;
       overflow: hidden;
       width: 0;
-      animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
+      animation: typing 3.5s steps(40, end) forwards, blink .75s step-end infinite;
     }
 
     p:before {
       content: "$";
       margin-right: 8px;
-      opacity: .7;
-      color: #ffcc00;
+      opacity: .5;
+      line-height: 18px;
     }
 
     p:nth-child(1) {
@@ -84,19 +87,19 @@
     }
 
     p:nth-child(2) {
-      animation-delay: 5s;
+      animation-delay: 4s;
     }
 
     p:nth-child(3) {
-      animation-delay: 10s;
+      animation-delay: 8s;
     }
 
     p:nth-child(4) {
-      animation-delay: 15s;
+      animation-delay: 12s;
     }
 
     p:nth-child(5) {
-      animation-delay: 20s;
+      animation-delay: 16s;
     }
 
     @keyframes typing {
