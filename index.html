@@ -14,20 +14,19 @@
       background: black;
       font-family: 'Fira Sans', sans-serif;
       font-size: 12px;
+      margin: 0;
+      padding: 0;
     }
 
     *, *:before, *:after {
       box-sizing: border-box;
     }
 
-    .terminal, .terminal:before, .terminal:after, p:after {
-      position: absolute;
-    }
-
     .terminal {
+      position: relative;
       height: 80vh;
       width: 80vw;
-      margin: 10vh 10vw;
+      margin: 10vh auto;
       padding: 26px 4px 4px;
       border-radius: 5px;
       background: linear-gradient(
@@ -43,21 +42,24 @@
 
     .terminal:before {
       content: " ";
+      position: absolute;
       width: 10px;
       height: 10px;
       margin: -20px 0 0 5px;
       border-radius: 5px;
       background: #fc625d;
-      box-shadow: 0 0 0 1px #de413e,
-                  15px 0 #fec041,
-                  15px 0 0 1px #dda035,
-                  30px 0 #35cc4b,
-                  30px 0 0 1px #28aa36;
+      box-shadow: 
+        0 0 0 1px #de413e,
+        15px 0 #fec041,
+        15px 0 0 1px #dda035,
+        30px 0 #35cc4b,
+        30px 0 0 1px #28aa36;
     }
 
     .terminal:after {
-      width: 100%;
       content: "Frigya";
+      position: absolute;
+      width: 100%;
       top: 0;
       text-align: center;
       color: #4c4c4c;
