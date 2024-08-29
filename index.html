@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frigya</title>
+  <title>Interactive Terminal Message</title>
   <style>
     html, body {
       width: 100%;
@@ -36,7 +36,6 @@
       );
       box-shadow: 0 0 0 1px rgba(0, 0, 0, .25);
       transition: all .5s ease;
-      overflow: hidden; /* Ensure that text doesn't overflow */
     }
 
     .terminal:before {
@@ -70,10 +69,7 @@
       white-space: nowrap;
       overflow: hidden;
       width: 0;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: var(--animation-delay);
-      margin: 0;
+      animation: typing 3.5s steps(40, end) forwards, blink .75s step-end infinite;
     }
 
     p:before {
@@ -83,27 +79,55 @@
       line-height: 18px;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        width: 0;
-      }
-      to {
-        opacity: 1;
-        width: 100%;
-      }
+    p:nth-child(1) {
+      animation-delay: 0s;
     }
 
-    .terminal p:nth-child(1) { --animation-delay: 0s; }
-    .terminal p:nth-child(2) { --animation-delay: 2s; }
-    .terminal p:nth-child(3) { --animation-delay: 4s; }
-    .terminal p:nth-child(4) { --animation-delay: 6s; }
-    .terminal p:nth-child(5) { --animation-delay: 8s; }
-    .terminal p:nth-child(6) { --animation-delay: 10s; }
-    .terminal p:nth-child(7) { --animation-delay: 12s; }
-    .terminal p:nth-child(8) { --animation-delay: 14s; }
-    .terminal p:nth-child(9) { --animation-delay: 16s; }
+    p:nth-child(2) {
+      animation-delay: 4s;
+    }
 
+    p:nth-child(3) {
+      animation-delay: 8s;
+    }
+
+    p:nth-child(4) {
+      animation-delay: 12s;
+    }
+
+    p:nth-child(5) {
+      animation-delay: 16s;
+    }
+    
+    p:nth-child(6) {
+      animation-delay: 20s;
+    }
+
+    p:nth-child(7) {
+      animation-delay: 24s;
+    }
+    
+    p:nth-child(8) {
+      animation-delay: 28s;
+    }
+    
+    p:nth-child(9) {
+      animation-delay: 32s;
+    }
+    
+     p:nth-child(10) {
+      animation-delay: 36s;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      0%, 50% { border-right-color: rgba(255, 204, 65, .75); }
+      50%, 100% { border-right-color: transparent; }
+    }
   </style>
 </head>
 <body>
@@ -112,12 +136,13 @@
     <p>You’re now part of something special.</p>
     <p>Are you ready for the challenge?</p>
     <p>This is your chance to show your creativity.</p>
-    <p>No rules. No limits. Just pure creativity.</p>
-    <p>The more you engage, the closer you’ll get to unlocking the next level.</p>
+    <p>No rules. No limits. Just pure creativity. </p>
+    <p>The more you engage,the closer you’ll get to Unlock the next level.</p>
     <p>We’re building a talented team to promote an idea, not just a brand.</p>
-    <p>Ready to play?</p>
+    <p>Ready to play ?</p>
     <p>Create your idea now and wait for us to send you the date to share your creativity.</p>
     <p>Welcome to the minority.</p>
+    
   </div>
 </body>
-</html>
+</html> make it all animated 
