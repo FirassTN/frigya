@@ -24,8 +24,9 @@
       position: relative;
       height: 80vh;
       width: 80vw;
+      max-width: 600px; /* Limit the width for larger screens */
       margin: 10vh auto;
-      padding: 26px 4px 4px;
+      padding: 20px;
       border-radius: 5px;
       background: linear-gradient(
         #f6f6f6, 
@@ -35,7 +36,7 @@
         #393456 21px
       );
       box-shadow: 0 0 0 1px rgba(0, 0, 0, .25);
-      transition: all .5s ease;
+      overflow: hidden; /* Handle overflow */
     }
 
     .terminal:before {
@@ -66,9 +67,9 @@
 
     p {
       color: #fff;
-      white-space: nowrap;
+      white-space: normal; /* Allow text wrapping */
       overflow: hidden;
-      width: 0;
+      width: 100%; /* Ensure full width */
       animation: typing 3.5s steps(40, end) forwards, blink .75s step-end infinite;
     }
 
@@ -115,7 +116,7 @@
       animation-delay: 32s;
     }
     
-     p:nth-child(10) {
+    p:nth-child(10) {
       animation-delay: 36s;
     }
 
@@ -136,13 +137,12 @@
     <p>You’re now part of something special.</p>
     <p>Are you ready for the challenge?</p>
     <p>This is your chance to show your creativity.</p>
-    <p>No rules. No limits. Just pure creativity. </p>
-    <p>The more you engage,the closer you’ll get to Unlock the next level.</p>
+    <p>No rules. No limits. Just pure creativity.</p>
+    <p>The more you engage, the closer you’ll get to unlocking the next level.</p>
     <p>We’re building a talented team to promote an idea, not just a brand.</p>
-    <p>Ready to play ?</p>
+    <p>Ready to play?</p>
     <p>Create your idea now and wait for us to send you the date to share your creativity.</p>
     <p>Welcome to the minority.</p>
-    
   </div>
 </body>
-</html> make it all animated 
+</html>
